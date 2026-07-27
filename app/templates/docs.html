@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Docs — gitops-gke-platform</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    p.sub { color: #94a3b8; margin-top: 0; margin-bottom: 2rem; }
+    a.back { color: #38bdf8; text-decoration: none; font-size: 0.9rem; }
+    .endpoint {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .method {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+    }
+    .path { font-family: monospace; font-size: 1rem; }
+    .desc { color: #94a3b8; margin: 0.6rem 0; }
+    pre {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin: 0.5rem 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a class="back" href="/">&larr; back home</a></p>
+    <h1>API Docs</h1>
+    <p class="sub">gitops-gke-platform — available endpoints</p>
+
+    <div class="endpoint">
+      <span class="method">GET</span><span class="path">/health</span>
+      <p class="desc">Liveness/readiness check. Returns healthy status — this is the endpoint GKE will later probe to decide if this pod is alive and ready for traffic.</p>
+      <pre>{"status": "healthy"}</pre>
+    </div>
+
+    <div class="endpoint">
+      <span class="method">GET</span><span class="path">/api/info</span>
+      <p class="desc">Reports which environment and which pod this specific running instance is — the field that makes a GitOps promotion across dev/staging/prod visibly provable.</p>
+      <pre>{"environment": "local", "pod_name": "local-dev-machine"}</pre>
+    </div>
+  </div>
+</body>
+</html>

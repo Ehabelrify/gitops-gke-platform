@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gitops-gke-platform</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+    h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
+    p.sub { color: #94a3b8; margin: 0 0 1.5rem; }
+    .badge {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #0f172a;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 0.25rem;
+    }
+    a { color: #38bdf8; text-decoration: none; margin: 0 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>gitops-gke-platform</h1>
+    <p class="sub">GKE + Terraform + ArgoCD, built and learned from scratch</p>
+    <span class="badge">env: {{ environment }}</span>
+    <span class="badge">pod: {{ pod_name }}</span>
+    <p style="margin-top: 1.5rem;">
+      <a href="/docs">API docs</a> · <a href="/health">/health</a> · <a href="/api/info">/api/info</a>
+    </p>
+  </div>
+</body>
+</html>

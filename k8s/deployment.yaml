@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-gke-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gitops-gke-app
+  template:
+    metadata:
+      labels:
+        app: gitops-gke-app
+    spec:
+      containers:
+        - name: gitops-gke-app
+          image: us-central1-docker.pkg.dev/gitops-gke-pipeline-503620/gitops-gke-app/gitops-gke-app:v1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ENVIRONMENT
+              value: "dev"
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
