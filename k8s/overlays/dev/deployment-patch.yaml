@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitops-gke-app
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: gitops-gke-app
+          env:
+            - name: ENVIRONMENT
+              value: "dev"
