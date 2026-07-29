@@ -64,26 +64,30 @@ Concretely:
 
 ---
 
-## WHAT WE ARE BUILDING (high level, subject to refinement together)
+## WHAT WE ARE BUILDING
 
-Likely similar shape to the old project — one or two small self-written services, deployed via
-ArgoCD + Kustomize across environments — but running on **real GKE**, with the cluster itself
-provisioned via **Terraform**, and GitOps wired in from the start rather than bolted on later.
-
-Exact scope (which services, how many environments, Terraform layout, etc.) has **not been
-decided yet** — that's a first-session conversation, not something to assume from the old
-project's shape. Ask before scaffolding anything.
+Decided and built (see `teaching/09-what-we-are-deploying.md` for the decision, `teaching/00-...`
+for the full sequence): one small self-written Flask app, containerized and pushed to Google
+Artifact Registry, deployed via ArgoCD + Kustomize across two environments (`dev`, `prod`) on a
+**real GKE Autopilot cluster** provisioned via **Terraform**, with GitOps wired in from the
+start. Scope for anything beyond this (a second service, staging environment, sealed-secrets,
+CI) is still open — ask before scaffolding any of that.
 
 ---
 
 ## HANDOVER STATUS
 
-**Status:** Not started. This file is the only thing that exists in this repo so far.
+**Live, authoritative status lives in `teaching/00-overview-and-working-agreement.md`** — read
+that file first when resuming, specifically its "Sequence so far" and "Resume point" sections.
+This section here is a snapshot, not the source of truth; it will go stale, that file won't
+(per the hard rule inside it about updating every step).
 
-**Next step on resume:** first session — introduce GCP/GKE/Terraform/ArgoCD/GitOps at a high
-level (the "why," not the "how" yet), confirm the person's actual goal for this project (what
-should it demonstrate, same as the old README's opening question), and agree on the two or three
-things to build before writing any code or provisioning anything in GCP.
+**As of 2026-07-29:** core roadmap is complete and verified end-to-end — real GCP project,
+Terraform-provisioned GKE Autopilot cluster, a containerized Flask app in Google Artifact
+Registry, and ArgoCD managing two isolated environments (`dev`/`prod`) purely from git, with a
+real promotion visibly provable via the app's own `/api/info` endpoint. Remaining work
+(sealed-secrets, CI, App of Apps) is optional polish, not core scope — see `teaching/00-...` for
+details and the current pause/resume state.
 
 ---
 
