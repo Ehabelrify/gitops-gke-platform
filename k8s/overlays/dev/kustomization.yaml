@@ -5,3 +5,6 @@ resources:
 patches:
   - path: deployment-patch.yaml
 namespace: dev
+images:
+  - name: us-central1-docker.pkg.dev/gitops-gke-pipeline-503620/gitops-gke-app/gitops-gke-app
+    newTag: v1
