@@ -37,7 +37,8 @@ jobs:
           docker push $IMAGE:$TAG
 
       - name: Update dev image tag
-        run: sed -i "s/newTag: .*/newTag: ${{ github.sha }}/" k8s/overlays/dev/kustomization.yaml
+        run: |
+          sed -i "s/newTag: .*/newTag: ${{ github.sha }}/" k8s/overlays/dev/kustomization.yaml
 
       - name: Commit and push
         run: |
