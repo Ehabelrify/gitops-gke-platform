@@ -7,4 +7,4 @@ patches:
 namespace: dev
 images:
   - name: us-central1-docker.pkg.dev/gitops-gke-pipeline-503620/gitops-gke-app/gitops-gke-app
-    newTag: v1
+    newTag: c7e3736fd0463a8ac4cd6ea5de9189939f595ba0
